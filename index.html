@@ -44,21 +44,33 @@
 
     .odds-wrap { display: flex; align-items: center; gap: 3px; }
     .odds-btn {
-      background: #0f3460; border: 1px solid #2a2a5a; color: #aaa;
+      background: #0f3460; border: 1px solid #2a4a7a; color: #aaa;
       width: 22px; height: 22px; border-radius: 4px; cursor: pointer;
       font-size: 1rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
     }
     .odds-btn:hover { border-color: #00c853; color: #00c853; }
 
     input[type="number"] {
-      background: #0f3460; border: 1px solid #2a2a5a; color: #fff;
-      border-radius: 6px; padding: 5px 6px; font-size: 0.85rem;
-      outline: none; transition: border .2s; -moz-appearance: textfield;
+      background: #0d2545;
+      border: 1.5px solid #3a5a9a;
+      color: #fff;
+      border-radius: 6px;
+      padding: 5px 6px;
+      font-size: 0.85rem;
+      outline: none;
+      transition: border .2s, box-shadow .2s;
+      -moz-appearance: textfield;
       min-width: 0;
     }
     input[type="number"]::-webkit-inner-spin-button,
     input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; }
-    input[type="number"]:focus { border-color: #00c853; }
+    input[type="number"]:focus {
+      border-color: #00c853;
+      box-shadow: 0 0 0 2px rgba(0,200,83,0.15);
+    }
+    input[type="number"]:hover:not(:focus) {
+      border-color: #5c9eff;
+    }
     .odds-input  { width: 72px; }
     .stake-input { width: 80px; text-align: right; }
 
@@ -89,27 +101,56 @@
 
     /* ── MOBILE CARDS ── */
     .leg-card {
-      background: #0f3460;
-      border: 1px solid #2a2a5a;
-      border-radius: 10px;
+      background: #0d2545;
+      border: 1.5px solid #3a5a9a;
+      border-radius: 12px;
       padding: 14px;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.3);
     }
     .leg-card-header {
       display: flex; align-items: center; justify-content: space-between;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #1e3a6a;
     }
-    .leg-card-title { font-size: 0.8rem; color: #aaa; font-weight: 600; }
+    .leg-card-title {
+      font-size: 0.8rem; color: #5c9eff; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.05em;
+    }
     .leg-card-profit { font-size: 1rem; font-weight: 700; }
 
     .leg-card-row {
-      display: flex; align-items: center; gap: 8px; margin-bottom: 8px;
+      display: flex; align-items: center; gap: 8px; margin-bottom: 10px;
     }
-    .leg-card-label { font-size: 0.72rem; color: #888; width: 48px; flex-shrink: 0; }
-    .leg-card-row input[type="number"] { flex: 1; }
+    .leg-card-label {
+      font-size: 0.72rem; color: #7a9acc; width: 52px; flex-shrink: 0;
+      font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em;
+    }
+    .leg-card-row input[type="number"] {
+      flex: 1;
+      background: #0a1e3d;
+      border: 1.5px solid #3a5a9a;
+      border-radius: 8px;
+      padding: 8px 10px;
+      font-size: 0.9rem;
+    }
+    .leg-card-row input[type="number"]:focus {
+      border-color: #00c853;
+      box-shadow: 0 0 0 2px rgba(0,200,83,0.15);
+    }
+    .leg-card-row .odds-wrap { flex: 1; }
+    .leg-card-row .odds-wrap input[type="number"] {
+      background: #0a1e3d;
+      border: 1.5px solid #3a5a9a;
+    }
 
     .df-row {
-      display: flex; gap: 16px; align-items: center; margin-bottom: 4px;
+      display: flex; gap: 16px; align-items: center;
+      padding: 8px 10px;
+      background: #0a1e3d;
+      border-radius: 8px;
+      border: 1px solid #1e3a6a;
     }
     .df-item { display: flex; align-items: center; gap: 6px; font-size: 0.78rem; color: #aaa; }
     .df-item input { width: 16px; height: 16px; accent-color: #00c853; cursor: pointer; }
@@ -117,32 +158,60 @@
 
     /* Total card op mobiel */
     .total-card {
-      background: #0f3460;
-      border: 1px solid #2a2a5a;
-      border-radius: 10px;
+      background: #0d2545;
+      border: 1.5px solid #5c9eff;
+      border-radius: 12px;
       padding: 14px;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 12px rgba(92,158,255,0.1);
     }
-    .total-card-title { font-size: 0.8rem; color: #aaa; font-weight: 600; margin-bottom: 10px; }
-    .total-card-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
-    .total-card-label { font-size: 0.72rem; color: #888; width: 80px; flex-shrink: 0; }
+    .total-card-title {
+      font-size: 0.8rem; color: #5c9eff; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.05em;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #1e3a6a;
+    }
+    .total-card-row { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+    .total-card-label {
+      font-size: 0.72rem; color: #7a9acc; width: 52px; flex-shrink: 0;
+      font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em;
+    }
+    .total-card-row input[type="number"] {
+      flex: 1;
+      background: #0a1e3d;
+      border: 1.5px solid #3a5a9a;
+      border-radius: 8px;
+      padding: 8px 10px;
+      font-size: 0.9rem;
+    }
+    .total-card-row input[type="number"]:focus {
+      border-color: #5c9eff;
+      box-shadow: 0 0 0 2px rgba(92,158,255,0.15);
+    }
 
     /* Add leg */
     .add-leg {
-      margin-top: 12px; background: none; border: 1px dashed #444;
-      color: #aaa; width: 100%; padding: 7px; border-radius: 8px;
+      margin-top: 12px; background: none; border: 1.5px dashed #3a5a9a;
+      color: #7a9acc; width: 100%; padding: 10px; border-radius: 10px;
       cursor: pointer; font-size: 0.85rem; transition: all .2s;
     }
-    .add-leg:hover { border-color: #00c853; color: #00c853; }
+    .add-leg:hover { border-color: #00c853; color: #00c853; background: rgba(0,200,83,0.05); }
 
     /* Summary */
     .summary {
-      margin-top: 14px; background: #0f3460;
-      border-radius: 10px; padding: 14px;
+      margin-top: 16px;
+      background: #0d2545;
+      border: 1.5px solid #3a5a9a;
+      border-radius: 12px;
+      padding: 16px;
       display: flex; gap: 10px; flex-wrap: wrap;
     }
     .sum-item { flex: 1; min-width: 80px; }
-    .sum-label { font-size: 0.68rem; color: #888; margin-bottom: 3px; }
+    .sum-label {
+      font-size: 0.68rem; color: #7a9acc; margin-bottom: 4px;
+      text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600;
+    }
     .sum-value { font-size: 1.05rem; font-weight: 700; }
     .sum-green { color: #00c853; }
     .sum-red   { color: #ff5555; }
@@ -206,356 +275,341 @@
   <div class="mobile-view">
     <div id="mobileLegs"></div>
 
-    <!-- Totaal card -->
+    <!-- Totaal kaart -->
     <div class="total-card">
-      <div class="total-card-title">Totale inzet</div>
+      <div class="total-card-title">💶 Totale inzet</div>
       <div class="total-card-row">
-        <span class="total-card-label">Inzet (EUR)</span>
-        <input type="number" class="stake-input" id="totalStakeMob" value="100" min="0" step="1" style="flex:1;" oninput="syncTotal('mob')">
+        <span class="total-card-label">Bedrag</span>
+        <input type="number" id="totalStakeMob" value="100" min="0" step="1">
+        <span class="currency">EUR</span>
       </div>
-      <div class="df-row" style="margin-top:4px;">
+      <div class="df-row">
         <label class="df-item">
-          <input type="checkbox" id="totalDMob" checked onchange="syncDTotal('mob')"> D
-          <span class="tip" title="Distribute: herbereken automatisch">?</span>
+          <input type="checkbox" id="totalDMob" checked> D
         </label>
         <label class="df-item">
-          <input type="radio" name="fixedMob" value="total" id="totalFMob" onchange="syncFixedMob('total')"> F
-          <span class="tip" title="Fixed: houd totaal vast">?</span>
+          <input type="radio" name="fixedMob" value="total" id="totalFMob"> F
         </label>
-        <span id="totalProfitMob" style="margin-left:auto;font-size:0.85rem;color:#888;">—</span>
+        <span style="margin-left:auto; font-size:0.85rem; font-weight:700;" id="totalProfitMob">—</span>
       </div>
     </div>
+
     <button class="add-leg" onclick="addLeg()">+ Leg toevoegen</button>
   </div>
 
-  <div class="summary" id="summary"></div>
+  <!-- ══ SUMMARY ══ -->
+  <div class="summary">
+    <div class="sum-item">
+      <div class="sum-label">Totale inzet</div>
+      <div class="sum-value sum-white" id="sumTotal">€0</div>
+    </div>
+    <div class="sum-item">
+      <div class="sum-label">Min. uitbetaling</div>
+      <div class="sum-value sum-white" id="sumPayout">€0</div>
+    </div>
+    <div class="sum-item">
+      <div class="sum-label">Winst</div>
+      <div class="sum-value" id="sumProfit">€0</div>
+    </div>
+    <div class="sum-item">
+      <div class="sum-label">Rendement</div>
+      <div class="sum-value" id="sumPct">0%</div>
+    </div>
+  </div>
 </div>
 
 <script>
 // ── State ──────────────────────────────────────────────────
 let legs = [];
-let fixedTarget = 'total';
+let fixedLeg = 'total'; // 'total' or index
 
-// ── URL params ────────────────────────────────────────────
-function parseURL() {
-  const p = new URLSearchParams(window.location.search);
-  const match = p.get('match');
-  if (match) document.getElementById('matchLabel').textContent = decodeURIComponent(match);
-  const market = p.get('market');
-  if (market) document.getElementById('marketLabel').textContent = '📊 ' + decodeURIComponent(market);
-  const stake = p.get('stake');
-  if (stake) {
-    document.getElementById('totalStake').value = stake;
-    document.getElementById('totalStakeMob').value = stake;
-  }
-  const oddsStr   = p.get('odds');
-  const labelsStr = p.get('labels');
-  const bmsStr    = p.get('bms');
-  if (oddsStr) {
-    const odds   = oddsStr.split(',');
-    const labels = labelsStr ? decodeURIComponent(labelsStr).split('|') : [];
-    const bms    = bmsStr    ? decodeURIComponent(bmsStr).split('|')    : [];
-    legs = odds.map((o, i) => ({
-      odds:      parseFloat(o) || 2.0,
-      label:     labels[i] || `Uitkomst ${i + 1}`,
-      bookmaker: bms[i]    || '',
-      stake:     0,
-      fixed:     false,
-    }));
-  } else {
-    legs = [
-      { odds: 2.0, label: 'Uitkomst 1', bookmaker: '', stake: 0, fixed: false },
-      { odds: 2.0, label: 'Uitkomst 2', bookmaker: '', stake: 0, fixed: false },
-    ];
-  }
+// ── URL params ─────────────────────────────────────────────
+const params = new URLSearchParams(location.search);
+const oddsParam   = (params.get('odds')   || '2,2').split(',').map(Number);
+const labelsParam = (params.get('labels') || '').split('|');
+const bmsParam    = (params.get('bms')    || '').split('|');
+const stakeParam  = parseFloat(params.get('stake') || '100');
+const matchParam  = params.get('match') || '';
+const marketParam = params.get('market') || '';
+
+document.getElementById('matchLabel').textContent  = matchParam;
+document.getElementById('marketLabel').textContent = marketParam;
+
+// Init legs from URL or defaults
+const initOdds = oddsParam.length >= 2 ? oddsParam : [2, 2];
+initOdds.forEach((o, i) => {
+  legs.push({
+    odds:  o || 2,
+    label: labelsParam[i] || `Leg ${i+1}`,
+    bm:    bmsParam[i]    || '',
+    d:     true,
+    stake: 0,
+  });
+});
+
+// ── Rounding ───────────────────────────────────────────────
+function roundStake(v) {
+  return Math.round(v);
 }
 
-// ── Add / remove leg ──────────────────────────────────────
-function addLeg() {
-  legs.push({ odds: 2.0, label: `Uitkomst ${legs.length + 1}`, bookmaker: '', stake: 0, fixed: false });
-  recalc();
-  renderAll();
-}
-function removeLeg(i) {
-  if (legs.length <= 2) return;
-  legs.splice(i, 1);
-  if (fixedTarget >= legs.length) fixedTarget = 'total';
-  recalc();
-  renderAll();
-}
-
-// ── Recalc ────────────────────────────────────────────────
-function totalStakeVal() {
-  return parseFloat(document.getElementById('totalStake').value) || 0;
+// ── Calc ───────────────────────────────────────────────────
+function calcImplied() {
+  return legs.reduce((s, l) => s + 1 / l.odds, 0);
 }
 
 function recalc() {
-  const total = totalStakeVal();
-  const impliedSum = legs.reduce((s, l) => s + (l.odds > 1 ? 1 / l.odds : 0), 0);
+  const totalStake = parseFloat(document.getElementById('totalStake')?.value || stakeParam) || 100;
+  const implied = calcImplied();
 
-  if (fixedTarget === 'total') {
+  if (fixedLeg === 'total') {
+    // Distribute based on total stake
     legs.forEach(l => {
-      const raw = l.odds > 1 ? (1 / l.odds / impliedSum) * total : 0;
-      l.stake = Math.round(raw);
+      l.stake = roundStake((1 / l.odds) / implied * totalStake);
     });
   } else {
-    const fi = fixedTarget;
-    const fixedStake = legs[fi]?.stake || 0;
-    const fixedOdds  = legs[fi]?.odds  || 2;
-    const fixedPayout = fixedStake * fixedOdds;
+    // One leg is fixed, calc others from its implied share
+    const fi = parseInt(fixedLeg);
+    const fixedStake = legs[fi].stake;
+    const fixedOdds  = legs[fi].odds;
+    const totalFromFixed = fixedStake * fixedOdds; // expected payout
     legs.forEach((l, i) => {
-      if (i === fi) return;
-      const raw = l.odds > 1 ? fixedPayout / l.odds : 0;
-      l.stake = Math.round(raw);
+      if (i !== fi) {
+        l.stake = roundStake(totalFromFixed / l.odds);
+      }
     });
-    // Update total display
-    const newTotal = legs.reduce((s, l) => s + l.stake, 0);
-    document.getElementById('totalStake').value    = newTotal;
-    document.getElementById('totalStakeMob').value = newTotal;
   }
+
+  renderAll();
 }
 
-function getProfitForLeg(i) {
-  const payout = legs[i].stake * legs[i].odds;
+// ── Profit per leg ─────────────────────────────────────────
+function legProfit(legIdx) {
   const totalIn = legs.reduce((s, l) => s + l.stake, 0);
+  const payout  = legs[legIdx].stake * legs[legIdx].odds;
   return payout - totalIn;
 }
 
-function getMinProfit() {
-  const totalIn = legs.reduce((s, l) => s + l.stake, 0);
-  const minPayout = Math.min(...legs.map(l => l.stake * l.odds));
-  return minPayout - totalIn;
+function minPayout() {
+  return Math.min(...legs.map(l => l.stake * l.odds));
 }
 
-function profitClass(v) {
-  if (v > 0.01)  return 'profit-pos';
-  if (v < -0.01) return 'profit-neg';
-  return 'profit-zero';
-}
-function profitStr(v) { return (v >= 0 ? '+' : '') + v.toFixed(2); }
-
-// ── Render desktop ────────────────────────────────────────
-function renderDesktop() {
-  const tbody = document.getElementById('legsBody');
-  tbody.innerHTML = '';
-
-  legs.forEach((leg, i) => {
-    const tr = document.createElement('tr');
-    const profit = getProfitForLeg(i);
-    const bm = leg.bookmaker ? `<span style="font-size:.68rem;color:#5c9eff;">${leg.bookmaker}</span><br>` : '';
-    const lbl = leg.label    ? `<span style="font-size:.72rem;color:#aaa;">${leg.label}</span>` : '';
-
-    tr.innerHTML = `
-      <td class="leg-num">${i + 1}</td>
-      <td>
-        <div>${bm}${lbl}</div>
-        <div class="odds-wrap" style="margin-top:4px;">
-          <button class="odds-btn" onclick="changeOdds(${i},-0.01)">−</button>
-          <input type="number" class="odds-input" value="${leg.odds.toFixed(2)}"
-            step="0.01" min="1.01" oninput="onOddsChange(${i},this.value)">
-          <button class="odds-btn" onclick="changeOdds(${i},0.01)">+</button>
-        </div>
-      </td>
-      <td>
-        <input type="number" class="stake-input" value="${leg.stake}"
-          step="1" min="0" oninput="onStakeChange(${i},this.value)">
-      </td>
-      <td class="currency">EUR</td>
-      <td class="col-d">
-        <input type="checkbox" checked disabled title="Distribute actief">
-      </td>
-      <td class="col-f">
-        <input type="radio" name="fixed" value="${i}"
-          ${fixedTarget === i ? 'checked' : ''}
-          onchange="setFixed(${i})">
-      </td>
-      <td class="col-profit ${profitClass(profit)}">${profitStr(profit)}</td>
-      <td><button class="remove-btn" onclick="removeLeg(${i})" title="Verwijder leg">×</button></td>
-    `;
-    tbody.appendChild(tr);
-  });
-
-  // Total row
-  document.getElementById('totalF').checked = fixedTarget === 'total';
-  const minProfit = getMinProfit();
-  document.getElementById('totalProfit').textContent = profitStr(minProfit);
-  document.getElementById('totalProfit').className = 'col-profit ' + profitClass(minProfit);
-}
-
-// ── Render mobile ─────────────────────────────────────────
-function renderMobile() {
-  const container = document.getElementById('mobileLegs');
-  container.innerHTML = '';
-
-  legs.forEach((leg, i) => {
-    const profit = getProfitForLeg(i);
-    const div = document.createElement('div');
-    div.className = 'leg-card';
-
-    const bm  = leg.bookmaker ? `<span style="color:#5c9eff;">${leg.bookmaker}</span> — ` : '';
-    const lbl = leg.label || `Uitkomst ${i+1}`;
-
-    div.innerHTML = `
-      <div class="leg-card-header">
-        <span class="leg-card-title">Leg ${i+1}: ${bm}${lbl}</span>
-        ${legs.length > 2
-          ? `<button class="remove-btn" onclick="removeLeg(${i})">×</button>`
-          : ''}
-      </div>
-
-      <div class="leg-card-row">
-        <span class="leg-card-label">Odds</span>
-        <button class="odds-btn" onclick="changeOdds(${i},-0.01)">−</button>
-        <input type="number" class="odds-input" value="${leg.odds.toFixed(2)}"
-          step="0.01" min="1.01" style="flex:1;"
-          oninput="onOddsChange(${i},this.value)">
-        <button class="odds-btn" onclick="changeOdds(${i},0.01)">+</button>
-      </div>
-
-      <div class="leg-card-row">
-        <span class="leg-card-label">Inzet (EUR)</span>
-        <input type="number" class="stake-input" value="${leg.stake}"
-          step="1" min="0" style="flex:1;"
-          oninput="onStakeChange(${i},this.value)">
-      </div>
-
-      <div class="df-row">
-        <label class="df-item">
-          <input type="checkbox" checked disabled> D
-        </label>
-        <label class="df-item">
-          <input type="radio" name="fixedMob" value="${i}"
-            ${fixedTarget === i ? 'checked' : ''}
-            onchange="setFixed(${i})"> F
-        </label>
-        <span class="leg-card-profit ${profitClass(profit)}" style="margin-left:auto;">
-          Winst: ${profitStr(profit)} EUR
-        </span>
-      </div>
-    `;
-    container.appendChild(div);
-  });
-
-  // Total mob
-  document.getElementById('totalFMob').checked = fixedTarget === 'total';
-  const minProfit = getMinProfit();
-  const el = document.getElementById('totalProfitMob');
-  el.textContent = 'Min. winst: ' + profitStr(minProfit) + ' EUR';
-  el.className = profitClass(minProfit);
-}
-
-// ── Summary ───────────────────────────────────────────────
-function renderSummary() {
-  const totalIn  = legs.reduce((s, l) => s + l.stake, 0);
-  const minPayout = legs.length ? Math.min(...legs.map(l => l.stake * l.odds)) : 0;
-  const minProfit = minPayout - totalIn;
-  const profitPct = totalIn > 0 ? (minProfit / totalIn * 100) : 0;
-
-  const el = document.getElementById('summary');
-  el.innerHTML = `
-    <div class="sum-item">
-      <div class="sum-label">Totale inzet</div>
-      <div class="sum-value sum-white">€${totalIn.toFixed(0)}</div>
-    </div>
-    <div class="sum-item">
-      <div class="sum-label">Min. uitbetaling</div>
-      <div class="sum-value sum-white">€${minPayout.toFixed(2)}</div>
-    </div>
-    <div class="sum-item">
-      <div class="sum-label">Winst</div>
-      <div class="sum-value ${minProfit >= 0 ? 'sum-green' : 'sum-red'}">€${minProfit.toFixed(2)}</div>
-    </div>
-    <div class="sum-item">
-      <div class="sum-label">Marge</div>
-      <div class="sum-value ${profitPct >= 0 ? 'sum-green' : 'sum-red'}">${profitPct.toFixed(2)}%</div>
-    </div>
-  `;
-}
-
+// ── Render ─────────────────────────────────────────────────
 function renderAll() {
   renderDesktop();
   renderMobile();
   renderSummary();
 }
 
-// ── Event handlers ────────────────────────────────────────
+function renderDesktop() {
+  const tbody = document.getElementById('legsBody');
+  tbody.innerHTML = '';
+
+  legs.forEach((leg, i) => {
+    const profit = legProfit(i);
+    const profitCls = profit > 0.05 ? 'profit-pos' : profit < -0.05 ? 'profit-neg' : 'profit-zero';
+
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td class="leg-num">${i+1}</td>
+      <td>
+        <div style="font-size:0.7rem;color:#5c9eff;margin-bottom:2px;">${leg.bm || ''}</div>
+        <div style="font-size:0.68rem;color:#888;margin-bottom:4px;">${leg.label}</div>
+        <div class="odds-wrap">
+          <button class="odds-btn" onclick="changeOdds(${i},-0.01)">−</button>
+          <input type="number" class="odds-input" value="${leg.odds.toFixed(2)}" min="1.01" step="0.01"
+            onchange="setOdds(${i}, this.value)" oninput="setOdds(${i}, this.value)">
+          <button class="odds-btn" onclick="changeOdds(${i},+0.01)">+</button>
+        </div>
+      </td>
+      <td>
+        <input type="number" class="stake-input" value="${leg.stake}" min="0" step="1"
+          onchange="setStake(${i}, this.value)" oninput="setStake(${i}, this.value)">
+      </td>
+      <td class="currency">EUR</td>
+      <td class="col-d">
+        <input type="checkbox" ${leg.d ? 'checked' : ''} onchange="setD(${i}, this.checked)">
+      </td>
+      <td class="col-f">
+        <input type="radio" name="fixed" value="${i}" ${fixedLeg == i ? 'checked' : ''}
+          onchange="setFixed('${i}')">
+      </td>
+      <td class="col-profit ${profitCls}">${profit >= 0 ? '+' : ''}${profit.toFixed(2)}</td>
+      <td><button class="remove-btn" onclick="removeLeg(${i})">✕</button></td>
+    `;
+    tbody.appendChild(tr);
+  });
+
+  // Sync total
+  const totalStakeEl = document.getElementById('totalStake');
+  if (fixedLeg === 'total' && totalStakeEl) {
+    totalStakeEl.value = legs.reduce((s, l) => s + l.stake, 0);
+  }
+  const totalF = document.getElementById('totalF');
+  if (totalF) totalF.checked = (fixedLeg === 'total');
+
+  const totalProfit = minPayout() - legs.reduce((s, l) => s + l.stake, 0);
+  const totalProfitEl = document.getElementById('totalProfit');
+  if (totalProfitEl) {
+    totalProfitEl.textContent = (totalProfit >= 0 ? '+' : '') + totalProfit.toFixed(2);
+    totalProfitEl.className = 'col-profit ' + (totalProfit > 0.05 ? 'profit-pos' : totalProfit < -0.05 ? 'profit-neg' : 'profit-zero');
+  }
+}
+
+function renderMobile() {
+  const container = document.getElementById('mobileLegs');
+  if (!container) return;
+  container.innerHTML = '';
+
+  legs.forEach((leg, i) => {
+    const profit = legProfit(i);
+    const profitCls = profit > 0.05 ? 'profit-pos' : profit < -0.05 ? 'profit-neg' : 'profit-zero';
+
+    const card = document.createElement('div');
+    card.className = 'leg-card';
+    card.innerHTML = `
+      <div class="leg-card-header">
+        <div>
+          <div class="leg-card-title">Leg ${i+1}${leg.bm ? ' — ' + leg.bm : ''}</div>
+          ${leg.label ? `<div style="font-size:0.72rem;color:#aaa;margin-top:2px;">${leg.label}</div>` : ''}
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="leg-card-profit ${profitCls}">${profit >= 0 ? '+' : ''}${profit.toFixed(2)}</span>
+          <button class="remove-btn" onclick="removeLeg(${i})">✕</button>
+        </div>
+      </div>
+
+      <div class="leg-card-row">
+        <span class="leg-card-label">Odds</span>
+        <div class="odds-wrap" style="flex:1">
+          <button class="odds-btn" onclick="changeOdds(${i},-0.01)">−</button>
+          <input type="number" style="flex:1;background:#0a1e3d;border:1.5px solid #3a5a9a;border-radius:8px;padding:8px 10px;font-size:0.9rem;color:#fff;outline:none;"
+            value="${leg.odds.toFixed(2)}" min="1.01" step="0.01"
+            onchange="setOdds(${i}, this.value)" oninput="setOdds(${i}, this.value)">
+          <button class="odds-btn" onclick="changeOdds(${i},+0.01)">+</button>
+        </div>
+      </div>
+
+      <div class="leg-card-row">
+        <span class="leg-card-label">Inzet</span>
+        <input type="number" value="${leg.stake}" min="0" step="1"
+          onchange="setStake(${i}, this.value)" oninput="setStake(${i}, this.value)">
+        <span class="currency">EUR</span>
+      </div>
+
+      <div class="df-row">
+        <label class="df-item">
+          <input type="checkbox" ${leg.d ? 'checked' : ''} onchange="setD(${i}, this.checked)"> D
+        </label>
+        <label class="df-item">
+          <input type="radio" name="fixedMob" value="${i}" ${fixedLeg == i ? 'checked' : ''}
+            onchange="setFixed('${i}')"> F
+        </label>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+
+  // Sync totaal mobiel
+  const totalStakeMob = document.getElementById('totalStakeMob');
+  if (totalStakeMob && fixedLeg === 'total') {
+    totalStakeMob.value = legs.reduce((s, l) => s + l.stake, 0);
+  }
+  const totalFMob = document.getElementById('totalFMob');
+  if (totalFMob) totalFMob.checked = (fixedLeg === 'total');
+
+  const totalProfit = minPayout() - legs.reduce((s, l) => s + l.stake, 0);
+  const totalProfitMob = document.getElementById('totalProfitMob');
+  if (totalProfitMob) {
+    totalProfitMob.textContent = (totalProfit >= 0 ? '+' : '') + totalProfit.toFixed(2) + ' EUR';
+    totalProfitMob.className = totalProfit > 0.05 ? 'profit-pos' : totalProfit < -0.05 ? 'profit-neg' : 'profit-zero';
+    totalProfitMob.style.cssText = 'margin-left:auto;font-size:0.9rem;font-weight:700;';
+  }
+}
+
+function renderSummary() {
+  const totalIn  = legs.reduce((s, l) => s + l.stake, 0);
+  const minPay   = minPayout();
+  const profit   = minPay - totalIn;
+  const pct      = totalIn > 0 ? (profit / totalIn * 100) : 0;
+
+  document.getElementById('sumTotal').textContent  = '€' + totalIn.toFixed(0);
+  document.getElementById('sumPayout').textContent = '€' + minPay.toFixed(2);
+  document.getElementById('sumProfit').textContent = (profit >= 0 ? '+€' : '-€') + Math.abs(profit).toFixed(2);
+  document.getElementById('sumPct').textContent    = (pct >= 0 ? '+' : '') + pct.toFixed(2) + '%';
+
+  const profitEl = document.getElementById('sumProfit');
+  const pctEl    = document.getElementById('sumPct');
+  profitEl.className = 'sum-value ' + (profit > 0.05 ? 'sum-green' : profit < -0.05 ? 'sum-red' : 'sum-white');
+  pctEl.className    = 'sum-value ' + (pct    > 0.05 ? 'sum-green' : pct    < -0.05 ? 'sum-red' : 'sum-white');
+}
+
+// ── Actions ────────────────────────────────────────────────
+function setOdds(i, val) {
+  const v = parseFloat(val);
+  if (!isNaN(v) && v >= 1.01) { legs[i].odds = v; recalc(); }
+}
+
 function changeOdds(i, delta) {
   legs[i].odds = Math.max(1.01, Math.round((legs[i].odds + delta) * 100) / 100);
   recalc();
-  renderAll();
 }
 
-function onOddsChange(i, val) {
+function setStake(i, val) {
   const v = parseFloat(val);
-  if (!isNaN(v) && v > 1) { legs[i].odds = v; recalc(); renderAll(); }
+  if (!isNaN(v) && v >= 0) {
+    legs[i].stake = v;
+    fixedLeg = String(i);
+    recalc();
+  }
 }
 
-function onStakeChange(i, val) {
-  const v = parseFloat(val);
-  if (isNaN(v)) return;
-  legs[i].stake = Math.round(v);
-  legs[i].fixed = true;
-  fixedTarget = i;
-  // Uncheck total fixed radios
-  document.getElementById('totalF').checked    = false;
-  document.getElementById('totalFMob').checked = false;
-  // Recalc other legs
-  const fi = i;
-  const fixedPayout = legs[fi].stake * legs[fi].odds;
-  const impliedOther = legs.reduce((s, l, idx) => idx === fi ? s : s + (l.odds > 1 ? 1/l.odds : 0), 0);
-  legs.forEach((l, idx) => {
-    if (idx === fi) return;
-    const raw = l.odds > 1 ? fixedPayout / l.odds : 0;
-    l.stake = Math.round(raw);
-  });
-  const newTotal = legs.reduce((s, l) => s + l.stake, 0);
-  document.getElementById('totalStake').value    = newTotal;
-  document.getElementById('totalStakeMob').value = newTotal;
-  renderAll();
-}
+function setD(i, checked) { legs[i].d = checked; recalc(); }
 
-function setFixed(i) {
-  fixedTarget = i;
+function setFixed(val) {
+  fixedLeg = val;
+  if (val === 'total') {
+    // sync stake
+    const ts = document.getElementById('totalStake') || document.getElementById('totalStakeMob');
+    if (ts) document.getElementById('totalStake') && (document.getElementById('totalStake').value = ts.value);
+  }
   recalc();
-  renderAll();
 }
 
-function syncTotal(src) {
-  const val = src === 'mob'
-    ? document.getElementById('totalStakeMob').value
-    : document.getElementById('totalStake').value;
-  document.getElementById('totalStake').value    = val;
-  document.getElementById('totalStakeMob').value = val;
-  if (fixedTarget === 'total') { recalc(); renderAll(); }
-}
-
-function syncFixedMob(val) {
-  fixedTarget = val === 'total' ? 'total' : parseInt(val);
-  document.getElementById('totalF').checked = val === 'total';
+function addLeg() {
+  legs.push({ odds: 2.00, label: `Leg ${legs.length+1}`, bm: '', d: true, stake: 0 });
   recalc();
-  renderAll();
 }
 
-// Total stake change
-document.getElementById('totalStake').addEventListener('input', function() {
-  document.getElementById('totalStakeMob').value = this.value;
-  if (fixedTarget === 'total') { recalc(); renderAll(); }
+function removeLeg(i) {
+  if (legs.length <= 2) return;
+  legs.splice(i, 1);
+  if (fixedLeg != 'total' && parseInt(fixedLeg) >= legs.length) fixedLeg = 'total';
+  recalc();
+}
+
+// Total stake input handlers
+document.getElementById('totalStake')?.addEventListener('change', function() {
+  if (fixedLeg !== 'total') { fixedLeg = 'total'; }
+  recalc();
 });
-document.getElementById('totalStakeMob').addEventListener('input', function() {
-  document.getElementById('totalStake').value = this.value;
-  if (fixedTarget === 'total') { recalc(); renderAll(); }
+document.getElementById('totalStakeMob')?.addEventListener('change', function() {
+  const ts = document.getElementById('totalStake');
+  if (ts) ts.value = this.value;
+  if (fixedLeg !== 'total') { fixedLeg = 'total'; }
+  recalc();
 });
-document.getElementById('totalF').addEventListener('change', function() {
-  if (this.checked) { fixedTarget = 'total'; document.getElementById('totalFMob').checked = true; recalc(); renderAll(); }
+document.getElementById('totalD')?.addEventListener('change', function() { recalc(); });
+document.getElementById('totalF')?.addEventListener('change', function() {
+  if (this.checked) { fixedLeg = 'total'; recalc(); }
 });
-document.getElementById('totalFMob').addEventListener('change', function() {
-  if (this.checked) { fixedTarget = 'total'; document.getElementById('totalF').checked = true; recalc(); renderAll(); }
+document.getElementById('totalDMob')?.addEventListener('change', function() { recalc(); });
+document.getElementById('totalFMob')?.addEventListener('change', function() {
+  if (this.checked) { fixedLeg = 'total'; recalc(); }
 });
 
-// ── Init ──────────────────────────────────────────────────
-parseURL();
+// ── Init ───────────────────────────────────────────────────
+document.getElementById('totalStake').value = stakeParam;
 recalc();
-renderAll();
 </script>
 </body>
 </html>
