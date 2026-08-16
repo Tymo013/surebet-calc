@@ -711,44 +711,15 @@ function onTotalBlur(el, isMobile) {
 
 // FIXED: alleen radio-klik mag fixedLeg veranderen
 function setFixed(val) {
-  const prevFixed = fixedLeg;
-  fixedLeg = val === 'total' ? 'total' : parseInt(val);
+fixedLeg = val === 'total' ? 'total' : parseInt(val);
 
-  // Sync beide radio groepen
-  document.querySelectorAll('input[name="fixedLeg"]').forEach(r => {
-    r.checked = (r.value == val);
-  });
-  document.querySelectorAll('input[name="mfixedLeg"]').forEach(r => {
-    r.checked = (r.value == val);
-  });
-
-  // ← NIEUW: sync huidige input waarden naar legs array VOOR herberekening
-  legs.forEach((leg, i) => {
-    const oddsEl  = document.getElementById(`odds_${i}`)  || document.getElementById(`modds_${i}`);
-    const stakeEl = document.getElementById(`stake_${i}`) || document.getElementById(`mstake_${i}`);
-    if (oddsEl)  leg.odds  = parseFloat(oddsEl.value)  || leg.odds;
-    if (stakeEl) leg.stake = parseFloat(stakeEl.value) || leg.stake;
-  });
-
-  // Als fixed leg verandert naar een specifieke leg → herbereken andere legs
-  if (prevFixed !== fixedLeg && fixedLeg !== 'total') {
-    const fixedStake = legs[fixedLeg].stake;
-    const fixedOdds  = legs[fixedLeg].odds;
-
-    if (fixedStake > 0 && fixedOdds > 1) {
-      const payout = fixedStake * fixedOdds;
-
-      for (let i = 0; i < legs.length; i++) {
-        if (i === fixedLeg) continue;
-        const o = legs[i].odds;
-        if (o > 1) {
-          legs[i].stake = Math.round(payout / o);
-        }
-      }
-    }
-  }
-
-  calculate();
+// Sync beide radio groepen
+document.querySelectorAll('input[name="fixedLeg"]').forEach(r => {
+r.checked = (r.value == val);
+});
+document.querySelectorAll('input[name="mfixedLeg"]').forEach(r => {
+r.checked = (r.value == val);
+});
 }
 
 function addLeg() {
