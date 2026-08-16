@@ -722,6 +722,14 @@ function setFixed(val) {
     r.checked = (r.value == val);
   });
 
+  // ← NIEUW: sync huidige input waarden naar legs array VOOR herberekening
+  legs.forEach((leg, i) => {
+    const oddsEl  = document.getElementById(`odds_${i}`)  || document.getElementById(`modds_${i}`);
+    const stakeEl = document.getElementById(`stake_${i}`) || document.getElementById(`mstake_${i}`);
+    if (oddsEl)  leg.odds  = parseFloat(oddsEl.value)  || leg.odds;
+    if (stakeEl) leg.stake = parseFloat(stakeEl.value) || leg.stake;
+  });
+
   // Als fixed leg verandert naar een specifieke leg → herbereken andere legs
   if (prevFixed !== fixedLeg && fixedLeg !== 'total') {
     const fixedStake = legs[fixedLeg].stake;
